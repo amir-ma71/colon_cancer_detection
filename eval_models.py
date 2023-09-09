@@ -37,8 +37,8 @@ class ColonDataGen(tf.keras.utils.Sequence):
             final_image = tf.keras.applications.xception.preprocess_input(image_arr)
         elif self.model_name == "ResNet50V2":
             final_image = tf.keras.applications.resnet_v2.preprocess_input(image_arr)
-        elif self.model_name == "EfficientNetB0":
-            final_image = tf.keras.applications.efficientnet.preprocess_input(image_arr)
+        elif self.model_name == "MobileNetV2":
+            final_image = tf.keras.applications.mobilenet_v2.preprocess_input(image_arr)
         elif self.model_name == "VGG16":
             final_image = tf.keras.applications.vgg16.preprocess_input(image_arr)
         else:
@@ -73,7 +73,7 @@ test_df = pd.read_csv("data/data_aug/test/info.csv", quoting=1)
 
 # variables
 # models name list "Xception",
-model_name_list = ["Xception","ResNet50V2", "EfficientNetB0", "VGG16"]
+model_name_list = ["Xception","ResNet50V2","VGG16", "MobileNetV2" ]
 BATCH_SIZE = 207
 
 for model_name in model_name_list:
@@ -106,6 +106,9 @@ for model_name in model_name_list:
 
     with open(f'{addres_name}/{model_name}_eval.txt', 'w') as f:
         f.write(f"********* {model_name} Outputs *********** \n")
+        f.write(f"bath number == 32 \n")
+        f.write(f"epoch == 50 \n")
+        f.write(f"AUC == {str(auc)} \n")
     # calculate Accuracy
         acc = metrics.accuracy_score(np.array(list(test_df["label"])), y_pred_label)
         print("Accuracy == ", acc)
@@ -127,7 +130,6 @@ for model_name in model_name_list:
     CM = metrics.confusion_matrix(np.array(list(test_df["label"])), y_pred_label)
     disp = metrics.ConfusionMatrixDisplay(CM, display_labels=["Normal", "cancer"])
     disp.plot()
-    plt.show()
     plt.savefig(f"{addres_name}/Confusion_Matrix.png")
     plt.clf()
 

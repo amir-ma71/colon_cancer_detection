@@ -1,0 +1,15 @@
+********* VGG16 Outputs *********** 
+bath number == 32 
+epoch == 50 
+AUC == 0.9660194174757281 
+Accuracy == 0.9082125603864735 
+f1_score == 0.9082125603864736 
+     **** Overall Report **** 
+              precision    recall  f1-score   support
+
+           0       0.90      0.91      0.91       103
+           1       0.91      0.90      0.91       104
+
+    accuracy                           0.91       207
+   macro avg       0.91      0.91      0.91       207
+weighted avg       0.91      0.91      0.91       207

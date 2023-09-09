@@ -1,0 +1,15 @@
+********* ResNet50V2 Outputs *********** 
+bath number == 32 
+epoch == 50 
+AUC == 0.9686333084391336 
+Accuracy == 0.927536231884058 
+f1_score == 0.928909952606635 
+     **** Overall Report **** 
+              precision    recall  f1-score   support
+
+           0       0.94      0.91      0.93       103
+           1       0.92      0.94      0.93       104
+
+    accuracy                           0.93       207
+   macro avg       0.93      0.93      0.93       207
+weighted avg       0.93      0.93      0.93       207

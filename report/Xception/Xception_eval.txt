@@ -1,0 +1,15 @@
+********* Xception Outputs *********** 
+bath number == 32 
+epoch == 50 
+AUC == 0.9715272591486184 
+Accuracy == 0.9130434782608695 
+f1_score == 0.9142857142857143 
+     **** Overall Report **** 
+              precision    recall  f1-score   support
+
+           0       0.92      0.90      0.91       103
+           1       0.91      0.92      0.91       104
+
+    accuracy                           0.91       207
+   macro avg       0.91      0.91      0.91       207
+weighted avg       0.91      0.91      0.91       207

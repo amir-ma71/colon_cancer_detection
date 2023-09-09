@@ -1,0 +1,15 @@
+********* MobileNetV2 Outputs *********** 
+bath number == 32 
+epoch == 50 
+AUC == 0.9380134428678119 
+Accuracy == 0.8599033816425121 
+f1_score == 0.8557213930348259 
+     **** Overall Report **** 
+              precision    recall  f1-score   support
+
+           0       0.84      0.89      0.86       103
+           1       0.89      0.83      0.86       104
+
+    accuracy                           0.86       207
+   macro avg       0.86      0.86      0.86       207
+weighted avg       0.86      0.86      0.86       207

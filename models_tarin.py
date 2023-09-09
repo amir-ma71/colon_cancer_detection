@@ -4,7 +4,7 @@ import keras
 import numpy as np
 import pandas as pd
 import tensorflow as tf
-from keras.applications.efficientnet import EfficientNetB0
+from keras.applications.mobilenet_v2 import MobileNetV2
 from keras.applications.resnet_v2 import ResNet50V2
 from keras.applications.vgg16 import VGG16
 from keras.applications.xception import Xception
@@ -52,8 +52,8 @@ class ColonDataGen(tf.keras.utils.Sequence):
             final_image = tf.keras.applications.xception.preprocess_input(image_arr)
         elif self.model_name == "ResNet50V2":
             final_image = tf.keras.applications.resnet_v2.preprocess_input(image_arr)
-        elif self.model_name == "EfficientNetB0":
-            final_image = tf.keras.applications.efficientnet.preprocess_input(image_arr)
+        elif self.model_name == "MobileNetV2":
+            final_image = tf.keras.applications.mobilenet_v2.preprocess_input(image_arr)
         elif self.model_name == "VGG16":
             final_image = tf.keras.applications.vgg16.preprocess_input(image_arr)
         else:
@@ -97,8 +97,8 @@ def model_network(model_name, train_data):
             include_top=False,
             weights="imagenet"
         )
-    elif model_name == "EfficientNetB0":
-        model_net = EfficientNetB0(
+    elif model_name == "MobileNetV2":
+        model_net = MobileNetV2(
             input_shape=(640, 640, 3),
             include_top=False,
             weights="imagenet"
@@ -140,9 +140,9 @@ def model_network(model_name, train_data):
 
 
 
-# "ResNet50V2", not ok
-# models name list "Xception", "ResNet50V2",
-model_name_list = [  "VGG16","EfficientNetB0"]
+# "EfficientNetB0", not ok
+# models name list "Xception", "ResNet50V2" "ResNet50V2",,
+model_name_list = [  "Xception", "ResNet50V2"]
 for model_name in model_name_list:
     print(35 * "*")
     print(model_name)
